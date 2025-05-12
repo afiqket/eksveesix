@@ -184,9 +184,12 @@ UPROGS=\
 	_zombie\
 	_swaptest\
 	_newvmtest\
+	_mmaptest\
 
-fs.img: mkfs README $(UPROGS)
-	./mkfs fs.img README $(UPROGS)
+TEXTFILES = alice.txt frankenstein.txt moby.txt
+
+fs.img: mkfs README $(TEXTFILES) $(UPROGS)
+	./mkfs fs.img README $(TEXTFILES) $(UPROGS)
 
 -include *.d
 
